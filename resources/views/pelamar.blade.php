@@ -180,6 +180,8 @@
 			                    </button>
 			                       <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
 			                        <a href="/pelamar/detail/{{ $p->pelamar_id  }}" class="dropdown-item">View</a>
+			                        <a onclick="return confirm('terima pelamar sebagai karyawan baru ?')" href="/pelamar/in/{{ $p->pelamar_id }}" class="dropdown-item">qualified</a>
+                                    <a onclick="return confirm('pelamar tidak memenuhi kriteria ?')" href="/pelamar/notin/{{ $p->pelamar_id }}" class="dropdown-item">not qualified</a>  
 		                            <a onclick="return confirm('Yakin ingin menghapus data pelamar ?')" href="/pelamar/hapuspel/{{ $p->pelamar_id }}" class="dropdown-item">Hapus</a>
 									               <a href="#" class="dropdown-item" data-toggle="modal" data-target="#terserah_{{ $p->pelamar_id}}">Invite</a>
                                 

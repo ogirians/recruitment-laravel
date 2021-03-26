@@ -22,6 +22,7 @@ class JoinController extends Controller
 		
 			->join('gambar', 'pelamar_id', '=', 'pelamar2.id')
 			->where('pelamar2.keterangan', '=', 'On Proses')
+			->orderBy('pelamar2.updated_at','desc')
 			->get();	
 
 		//return view('join', compact('data'));
@@ -158,8 +159,6 @@ class JoinController extends Controller
 	DB::table('pelamar2')->where('id',$id)->update([
 
 		'keterangan' => 'not qualified',
-
-
 	
 	]);
 
@@ -203,6 +202,19 @@ class JoinController extends Controller
 		//return view('join', compact('data'));
 		return view('qualified', ['data' => $data]);
 	}
+	
+		public function unqualified()
+	{
+		$data = DB::table('pelamar2')
+		
+			->join('gambar', 'pelamar_id', '=', 'pelamar2.id')
+			->where('pelamar2.keterangan', '=', 'not qualified')
+			->get();	
+
+		//return view('join', compact('data'));
+		return view('qualified', ['data' => $data]);
+	}
+
 
 
 }

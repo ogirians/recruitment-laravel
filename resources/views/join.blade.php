@@ -69,11 +69,13 @@
             </div>
           </div>
 
-
-
-
-
-
-
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#dataTable').DataTable( {
+  
+        "ordering": false
+    } );
+} );
+</script>
 
 @endsection

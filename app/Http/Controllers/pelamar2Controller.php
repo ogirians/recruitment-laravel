@@ -23,7 +23,7 @@ class pelamar2Controller extends Controller
 		'nama' => 'required',
 		'email' => 'required',
 		'posisi' => 'required',
-		'umur' => 'required|numeric|max:25|min:18',
+		'umur' => 'required|numeric|max:30|min:18',
 		'alamat' => 'required',
 		'tempat' => 'required',
 		'tanggal' => 'required',

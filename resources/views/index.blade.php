@@ -77,25 +77,39 @@
    
 
        <!-- Nav Item - Charts -->
-
-      <li class="nav-item">
+  <!-- Nav Item - Charts -->
+        <li class="nav-item">
         <a class="nav-link" href="/pelamar">
           <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
           <span>Pelamar</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/OnProgres">
+        <a class="nav-link" href="/seen">
+          <i class="fas fa-eye fa-2x text-gray-300"></i>
+          <span>seen</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/OnProgres" >
           <i class="fas fa-comments fa-2x text-gray-300"></i>
           <span>On Process</span></a>
       </li>
+       </li>
           <li class="nav-item">
           <a class="nav-link" href="/finish">
-          <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+          <i class="fas fa-check-circle fa-sm fa-fw mr-2 text-gray-400"></i>
           <span>finish process</span></a>
       </li>
 
+
       <!-- Divider -->
       <hr class="sidebar-divider">
+      </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/unqualified">
+          <i class="fas fa-times-circle fa-sm fa-fw mr-2 text-gray-400"></i>
+          <span>unqualified</span></a>
+      </li>
+
 
          <li class="nav-item">
         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();

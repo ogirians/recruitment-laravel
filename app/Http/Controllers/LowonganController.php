@@ -226,6 +226,30 @@ public function combo() {
 		$pelamar = DB::table('pelamar2')
 		->join('gambar','gambar.pelamar_id', '=', 'pelamar2.id')
 		->orderBy('pelamar2.created_at')
+		->where('keterangan',"Unprocessed")
+		->get();
+        
+        $posisi = DB::table('lowongan')
+        ->select('lowongan')
+        ->where('status', 'Open')
+        ->get();
+        
+        
+	//	return view('pelamar', ['pel' => $pelamar]);
+		
+		 return view('pelamar', array(
+        'pel' => $pelamar,
+        'posisi' => $posisi,   
+        ));
+	}
+	
+	public function seen()
+	{
+		
+		$pelamar = DB::table('pelamar2')
+		->join('gambar','gambar.pelamar_id', '=', 'pelamar2.id')
+		->orderBy('pelamar2.created_at')
+		->where('keterangan',"seen")
 		->get();
         
         $posisi = DB::table('lowongan')
@@ -320,13 +344,19 @@ public function hapuspel($id)
 
 public function lembaran($id)
 	{
-
+      //  DB::table('pelamar2')->where('id',$request->id)->update
+        DB::table('pelamar2')
+              ->where('id', $id)
+              ->update(['keterangan' => "seen"]);
+        
 		$pelamar = DB::table('pelamar2')
 		->join('gambar','gambar.pelamar_id', '=', 'pelamar2.id')
 		->join('cv2','cv2.pelamar_id', '=', 'pelamar2.id')
 		->leftjoin('sertifikat','sertifikat.pelamar_id', '=', 'pelamar2.id')
 		->select('pelamar2.nama','pelamar2.posisi', 'pelamar2.umur', 'pelamar2.alamat', 'pelamar2.tempat', 'pelamar2.tanggal', 'pelamar2.agama', 'pelamar2.kewarganegaraan', 'pelamar2.status', 'pelamar2.ktp', 'pelamar2.ktp', 'pelamar2.telepon', 'pelamar2.pekerjaan', 'pelamar2.keterangan','gambar.file','cv2.file_cv','sertifikat.file_sertifikat','gambar.pelamar_id')
 		->where('pelamar2.id',$id)->get();
+		
+		
 
 		return view('detail', ['pel' => $pelamar]);
 	}

@@ -98,6 +98,8 @@ Route::get('/hapus/{id}','LowonganController@hapus');
 //tampilkan list pelamar
 Route::get('/pelamar','LowonganController@lembaran2');
 
+Route::get('/seen','LowonganController@seen');
+
 //untuk kirim email ke pelamar
 Route::post('/invite', 'LowonganController@updatepel2');
 
@@ -147,6 +149,7 @@ Route::get('/pelamar/hapuspeljoin/{id}', 'JoinController@hapusjoin');
 
 
 //untuk menampilkan qualified pelamar
+Route::get('/unqualified','JoinController@unqualified');
 Route::get('/finish','JoinController@show');
 
 /////////////////////////////////////////////////end-dashboard//////////////////////////////////////////////////////////

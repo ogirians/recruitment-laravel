@@ -3,6 +3,10 @@
 /storage/*.key
 /vendor
 /.idea
+/public/data_sertif
+/public/data_file
+/public/data_cv
+/public/data_low
 Homestead.json
 Homestead.yaml
 .env

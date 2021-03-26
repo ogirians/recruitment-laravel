@@ -15,16 +15,16 @@
 
   <!-- Custom Fonts -->
   <link href="/kuning/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="/kuning/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
   <link href="/kuning/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link href="{{ asset('kuning/css/stylish-portfolio.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('/kuning/css/stylish-portfolio.min.css') }}" rel="stylesheet">
   <link src="/kuning/css/jquery.steps.css" rel="stylesheet">
 
   <script src="/kuning/js/bootstrap-datepicker.js"></script>
   <link rel="stylesheet" href="/kuning/css/datepicker.css">
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!--<script type="text/javascript">
@@ -201,7 +201,7 @@
   <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="/js/stylish-portfolio.min.js"></script>
+  <script src="/kuning/js/stylish-portfolio.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
 

@@ -143,7 +143,7 @@
 Silahkan bawa CV anda dan isi dokumen yang di download ketika selesai mengisi Formulir di website rekruitment kami, recruitment.indoberkainvestama.com<br>
 <br>
 Thanks and Best Regards.<br>
-Erly Mahirawati<br>
+Iftiyah<br>
 HRD Department</span></div>
 
                                     </td>

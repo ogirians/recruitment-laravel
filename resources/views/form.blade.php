@@ -203,7 +203,7 @@
  </div>
   
 
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js">  </script>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js">  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
   <script> 
