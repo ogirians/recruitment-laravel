@@ -27,7 +27,7 @@ Route::get('/cleareverything', function () {
 /////////////////////////////////////////////////////start-frontwebsite//////////////////////////////////////////////////////
 
 //halaman utama
-Route::get('/', function () { 
+Route::get('/', function () {
     return view('isi');
 	});
 
@@ -84,7 +84,7 @@ Route::post('/lowongan/store','LowonganController@store');
 
 //mengedit lowongan
 Route::get('/editlow/{id}','LowonganController@editlow');
-Route::post('/lowongan/update','LowonganController@update');	
+Route::post('/lowongan/update','LowonganController@update');
 
 //menghapus lowongan
 Route::get('/hapus/{id}','LowonganController@hapus');
@@ -102,6 +102,8 @@ Route::get('/seen','LowonganController@seen');
 
 //untuk kirim email ke pelamar
 Route::post('/invite', 'LowonganController@updatepel2');
+Route::post('/invitepsi', 'LowonganController@updatepel3');
+
 
 //hapus pelamar
 Route::get('/pelamar/hapuspel/{id}','LowonganController@hapuspel');
@@ -122,7 +124,7 @@ Route::get('/pelamar/cetak/{id}','LowonganController@cetak_pdf');
 
 //untuk memfilter pelamar
 Route::get('/pelamar/filter', 'LowonganController@parah');
-Route::get('/pelamar/filter/{start?}/{end?}/{pos?}/{old_min?}/{old_max?}','LowonganController@filter');
+Route::get('/pelamar/filter/{start?}/{end?}/{pos?}/{old_min?}/{old_max?}/{pendidikan?}','LowonganController@filter');
 
 ////////////////////////////////end- list pelamar////////////////////////
 
@@ -151,6 +153,7 @@ Route::get('/pelamar/hapuspeljoin/{id}', 'JoinController@hapusjoin');
 //untuk menampilkan qualified pelamar
 Route::get('/unqualified','JoinController@unqualified');
 Route::get('/finish','JoinController@show');
+Route::get('/pelamar/push/{id}','JoinController@push');
 
 /////////////////////////////////////////////////end-dashboard//////////////////////////////////////////////////////////
 

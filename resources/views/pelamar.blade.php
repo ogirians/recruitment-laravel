@@ -10,13 +10,10 @@
     }
   </style>
 
-       
-                    
-                   
-           
+
 <h1 class="h3 mb-2 text-gray-800">Daftar Pelamar</h1>
- 
- @include('includes.message')     
+
+ @include('includes.message')
 
           	<div class="card shadow mb-4" style="margin-bottom: 0.0rem !important;">
                 <!-- Card Header - Accordion -->
@@ -40,10 +37,10 @@
                   <div class="card-body">
                         <div class="container" style="padding-left:0px; ">
            				<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="/pelamar/filter" method="GET" style="max-height: 150px;">
-           				
+
            				<div class="row">
                         <div class="col">
-                        <a style="padding-bottom: 10px;">Tanggal Mulai: </a> 
+                        <a style="padding-bottom: 10px;">Tanggal Mulai: </a>
                         <div class="input-group">
                        <input type="date" class="form-control bg-light border-0 small" placeholder="tanggal"   aria-label="Search" aria-describedby="basic-addon2" name="start_date">
                          <!--<div class="input-group-append">
@@ -53,9 +50,9 @@
                          </div>-->
                          </div>
                      	</div>
-                        
+
                      	<div class="col">
-                        <a style="padding-bottom: 10px;">Tanggal Selesai: </a> 
+                        <a style="padding-bottom: 10px;">Tanggal Selesai: </a>
                         <div class="input-group">
                        <input type="date" class="form-control bg-light border-0 small" placeholder="tanggal"   aria-label="Search" aria-describedby="basic-addon2" name="finish_date">
                          <!--<div class="input-group-append">
@@ -67,15 +64,16 @@
                      	</div>
 
                      	<div class="col">
-                        <a style="padding-bottom: 10px;">Posisi: </a> 
+                        <a style="padding-bottom: 10px;">Posisi: </a>
                         <div class="input-group">
-                        
+
                         <!--<input type="text" class="form-control bg-light border-0 small" placeholder="posisi"  aria-label="Search" aria-describedby="basic-addon2" name="pos">-->
-                         <select class="form-control" id="exampleFormControlSelect1" name="pos" required="required" value="{{ old('pos') }}">
+                         <select class="form-control" id="exampleFormControlSelect1" name="pos" value="{{ old('pos') }}">
+                         <option value=""></option>
                            @foreach ($posisi as $p)
                               <option>{{ $p -> lowongan }}</option>
-                           @endforeach  
-                        </select>  
+                           @endforeach
+                        </select>
                          <!--<div class="input-group-append">
                          <button class="btn btn-info" type="submit" >
                          <i class="fas fa-search fa-sm"></i>
@@ -85,7 +83,7 @@
                      	</div>
 
                      	<div class="col">
-                        <a style="padding-bottom: 10px;">Usia minimal: </a> 
+                        <a style="padding-bottom: 10px;">Usia minimal: </a>
                         <div class="input-group">
                        <input type="number" class="form-control bg-light border-0 small" placeholder="usia"   aria-label="Search" aria-describedby="basic-addon2" name="old-min">
                          <!--<div class="input-group-append">
@@ -97,7 +95,7 @@
                      	</div>
 
                      	<div class="col">
-                        <a style="padding-bottom: 10px;">Usia maksimal: </a> 
+                        <a style="padding-bottom: 10px;">Usia maksimal: </a>
                         <div class="input-group">
                        <input type="number" class="form-control bg-light border-0 small" placeholder="usia"   aria-label="Search" aria-describedby="basic-addon2" name="old-max">
                          <!--<div class="input-group-append">
@@ -107,6 +105,32 @@
                          </div>-->
                          </div>
                      	</div>
+
+                      <div class="col">
+                        <a style="padding-bottom: 10px;">pendidikan: </a>
+                        <div class="input-group">
+
+                        <!--<input type="text" class="form-control bg-light border-0 small" placeholder="posisi"  aria-label="Search" aria-describedby="basic-addon2" name="pos">-->
+                         <select class="form-control" id="exampleFormControlSelect1" name="pendidikan"  value="{{ old('pendidikan') }}">
+                              <option value=""></option>
+                              <option>SMA</option>
+                              <option>SMK</option>
+                              <option>S1</option>
+                              <option>S2</option>
+                              <option>D1</option>
+                              <option>D2</option>
+                              <option>D3</option>
+                              <option>D4</option>
+                              <option>Lainnnya</option>
+                        </select>
+                         <!--<div class="input-group-append">
+                         <button class="btn btn-info" type="submit" >
+                         <i class="fas fa-search fa-sm"></i>
+                         </button>
+                         </div>-->
+                         </div>
+                     	</div>
+
 
                      	<div class="col" >
                          <div class="input-group-append" style="margin-left: 80px; margin-top: 30px;">
@@ -131,49 +155,57 @@
                 <span class="text">Tambahkan</span>
                 </a></h6>-->
             </div>
-            
-            
+
+
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                         <th>NO</th>
-                    	<th>Tanggal melamar</th>
+                    	  <th>Tanggal melamar</th>
                         <th>Nama</th>
                         <th>Foto</th>
-						<th>Posisi</th>
-						<th>Umur</th>
-						<th>Nomor Telepon/HP</th>
-						<th>Status</th>
-						<th>Aksi</th>
+                        <th>Posisi</th>
+                        <th>Umur</th>
+                        <th>pendidikan</th>
+                        <th>jurusan</th>
+
+                        <!--<th>Nomor Telepon/HP</th>-->
+                        <th>Status</th>
+                        <th>Aksi</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                         <th>NO</th>
-                    	<th>Tanggal melamar</th>
+                    	  <th>Tanggal melamar</th>
                         <th>Nama</th>
                         <th>Foto</th>
-						<th>Posisi</th>
-						<th>Umur</th>
-						<th>Nomor Telepon/HP</th>
-						<th>Status</th>
-						<th>Aksi</th>
+                        <th>Posisi</th>
+                        <th>Umur</th>
+                        <th>pendidikan</th>
+                        <th>jurusan</th>
+
+                        <!--<th>Nomor Telepon/HP</th>-->
+                        <th>Status</th>
+                        <th>Aksi</th>
                     </tr>
                   </tfoot>
                   <tbody>
                     @foreach($pel as $p)
-                    <tr> 
+                    <tr>
                         <td>{{ $no }}</td>
-                    	<td>{{ Carbon\Carbon::parse($p->created_at)->format('m-d-Y') }}</td>
+                    	  <td>{{ Carbon\Carbon::parse($p->created_at)->format('m-d-Y') }}</td>
                         <td>{{ $p->nama }}</td>
                         <td><img width="75px" src="{{ url('data_file/'.$p->file) }}"></td>
-						<td>{{ $p->posisi }}</td>
-						<td>{{ $p->umur }}</td>
-						<td>{{ $p->telepon }}</td>
-						<td>{{ $p->keterangan }}</td>
-						<td style="text-align: center;">
+                        <td>{{ $p->posisi }}</td>
+                        <td>{{ $p->umur }}</td>
+                        <td>{{ $p->pendidikan }}</td>
+                        <td>{{ $p->jurusan }}</td>
+                        <!--<td>{{ $p->telepon }}</td>-->
+                        <td>{{ $p->keterangan }}</td>
+                        <td style="text-align: center;">
 							           <div class="dropdown mb-4">
 			                    <button class="btn btn-info btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			                      Action
@@ -181,55 +213,93 @@
 			                       <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
 			                        <a href="/pelamar/detail/{{ $p->pelamar_id  }}" class="dropdown-item">View</a>
 			                        <a onclick="return confirm('terima pelamar sebagai karyawan baru ?')" href="/pelamar/in/{{ $p->pelamar_id }}" class="dropdown-item">qualified</a>
-                                    <a onclick="return confirm('pelamar tidak memenuhi kriteria ?')" href="/pelamar/notin/{{ $p->pelamar_id }}" class="dropdown-item">not qualified</a>  
-		                            <a onclick="return confirm('Yakin ingin menghapus data pelamar ?')" href="/pelamar/hapuspel/{{ $p->pelamar_id }}" class="dropdown-item">Hapus</a>
-									               <a href="#" class="dropdown-item" data-toggle="modal" data-target="#terserah_{{ $p->pelamar_id}}">Invite</a>
-                                
-              			            </div>
+                              <a onclick="return confirm('pelamar tidak memenuhi kriteria ?')" href="/pelamar/notin/{{ $p->pelamar_id }}" class="dropdown-item">not qualified</a>
+
+
+                              @if ($p->keterangan !== "seen")
+                              <a onclick="return confirm('Yakin ingin menghapus data pelamar ?')" href="/pelamar/hapuspel/{{ $p->pelamar_id }}" class="dropdown-item">Hapus</a>
+									            @else
+                              <a onclick="return confirm('hapus dari list seen? Status akan kembali menjadi unproses!')" href="/pelamar/hapuspeljoin/{{ $p->pelamar_id }}" class="dropdown-item">unseen</a>
+                              @endif
+                              <a href="#" class="dropdown-item" data-toggle="modal" data-target="#terserah_{{ $p->pelamar_id}}">Invite interview</a>
+                              <a href="#" class="dropdown-item" data-toggle="modal" data-target="#terserah2_{{ $p->pelamar_id}}">Invite psikotest</a>
+
+              			          </div>
 			                        </div>
+                                          <div class="modal fade" id="terserah_{{ $p->pelamar_id }}" role="dialog">
+                                            <div class="modal-dialog">
 
-                                        <div class="modal fade" id="terserah_{{ $p->pelamar_id }}" role="dialog">
-                                              <div class="modal-dialog">
-
-                                                <div class="modal-content">
+                                              <div class="modal-content">
                                                  <div class="modal-header">
-                                                  <h5>Send Invitation Email</h5>
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                               <h4 class="modal-title"></h4>
+                                                    <h5>Send Invitation Email</h5>
+                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title"></h4>
                                                 </div>
-                                            <div class="modal-body">
 
-                                              <form action="/invite" method="post">
-                                                {{ csrf_field() }}
-                                                 <input class="form-control" id="exampleFormControlInput1" placeholder="Lowongan" type="hidden" name="id" required="required" value="{{ $p->pelamar_id }}">  <br/>
-                                                <label for="exampleFormControlInput1">nama</label>
-                                                <input class="form-control" id="exampleFormControlInput1" placeholder="Lowongan" type="text" name="nama" required="required" value="{{ $p->nama }}">  <br/>
-                                                <label for="exampleFormControlInput1">email</label>
-                                                <input class="form-control" id="exampleFormControlInput1" placeholder="Open" type="text" name="email" required="required" value="{{ $p->email }}">  <br/>
-                                                <label for="exampleFormControlInput1">tanggal</label>
-                                                <input class="form-control" id="exampleFormControlInput1" placeholder="tanggal" type="date" name="waktu" required="required" value="{{ old('tanggal') }}"><br/>
-                                                <label for="exampleFormControlInput1">waktu</label>
-                                                <input class="form-control" id="exampleFormControlInput1" placeholder="jam" type="text" name="jam" required="required" value="{{ old('jam') }}"><br/>
-                                                <label for="exampleFormControlInput1">tempat</label>
-                                                <input class="form-control" id="exampleFormControlInput1" placeholder="wilayah" type="text" name="tempat" required="required" value="{{ old('tempat') }}"><br/>
-                                                <button class="btn btn-success" type="submit" >Kirim</button>
-                                                
-                                            <!--
-                                                Posisi <input type="text" name="lowongan" required="required"> <br/>
-                                                Status <input type="text" name="status" required="required"> <br/>
-                                                Lokasi <input type="text" name="lokasi" required="required"> <br/>
-                                                <input type="submit" value="Simpan Data">
-                                            -->
-                                              </form>
+                                                <div class="modal-body">
 
-                                              </div>
+                                                    <form action="/invite" method="post">
+                                                    {{ csrf_field() }}
+                                                    <input class="form-control" id="exampleFormControlInput1" placeholder="Lowongan" type="hidden" name="id" required="required" value="{{ $p->pelamar_id }}">  <br/>
+                                                    <label for="exampleFormControlInput1">nama</label>
+                                                    <input class="form-control" id="exampleFormControlInput1" placeholder="Lowongan" type="text" name="nama" required="required" value="{{ $p->nama }}">  <br/>
+                                                    <label for="exampleFormControlInput1">email</label>
+                                                    <input class="form-control" id="exampleFormControlInput1" placeholder="Open" type="text" name="email" required="required" value="{{ $p->email }}">  <br/>
+                                                    <label for="exampleFormControlInput1">tanggal</label>
+                                                    <input class="form-control" id="exampleFormControlInput1" placeholder="tanggal" type="date" name="waktu" required="required" value="{{ old('tanggal') }}"><br/>
+                                                    <label for="exampleFormControlInput1">waktu</label>
+                                                    <input class="form-control" id="exampleFormControlInput1" placeholder="jam" type="text" name="jam" required="required" value="{{ old('jam') }}"><br/>
+                                                    <label for="exampleFormControlInput1">tempat</label>
+                                                    <input class="form-control" id="exampleFormControlInput1" placeholder="wilayah" type="text" name="tempat" required="required" value="{{ old('tempat') }}"><br/>
+                                                    <button class="btn btn-success" type="submit" >Kirim</button>
+                                                    </form>
+
+                                                </div>
+
                                                 <div class="modal-footer">
                                                 <button type="button" class="btn btn-primary m-t-10" data-dismiss="modal"> Tutup</button>
+                                                </div>
+                                              </div>
                                             </div>
+                                          </div>
+
+                                          <div class="modal fade" id="terserah2_{{ $p->pelamar_id }}" role="dialog">
+                                            <div class="modal-dialog">
+
+                                              <div class="modal-content">
+                                                 <div class="modal-header">
+                                                    <h5>Send Invitation Email</h5>
+                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title"></h4>
+                                                </div>
+
+                                                <div class="modal-body">
+
+                                                    <form action="/invitepsi" method="post">
+                                                    {{ csrf_field() }}
+                                                    <input class="form-control" id="exampleFormControlInput1" placeholder="Lowongan" type="hidden" name="id" required="required" value="{{ $p->pelamar_id }}">  <br/>
+                                                    <label for="exampleFormControlInput1">nama</label>
+                                                    <input class="form-control" id="exampleFormControlInput1" placeholder="Lowongan" type="text" name="nama" required="required" value="{{ $p->nama }}">  <br/>
+                                                    <label for="exampleFormControlInput1">email</label>
+                                                    <input class="form-control" id="exampleFormControlInput1" placeholder="Open" type="text" name="email" required="required" value="{{ $p->email }}">  <br/>
+                                                    <label for="exampleFormControlInput1">tanggal</label>
+                                                    <input class="form-control" id="exampleFormControlInput1" placeholder="tanggal" type="date" name="waktu" required="required" value="{{ old('tanggal') }}"><br/>
+                                                    <label for="exampleFormControlInput1">waktu</label>
+                                                    <input class="form-control" id="exampleFormControlInput1" placeholder="jam" type="text" name="jam" required="required" value="{{ old('jam') }}"><br/>
+                                                    <label for="exampleFormControlInput1">tempat</label>
+                                                    <input class="form-control" id="exampleFormControlInput1" placeholder="wilayah" type="text" name="tempat" required="required" value="{{ old('tempat') }}"><br/>
+                                                    <button class="btn btn-success" type="submit" >Kirim</button>
+                                                    </form>
+
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary m-t-10" data-dismiss="modal"> Tutup</button>
+                                                </div>
+                                              </div>
                                             </div>
-                                            </div>
-                                            </div>
-                  
+                                          </div>
+
 						        </td>
                     </tr>
                      @php
@@ -263,4 +333,3 @@
 
 
 @endsection
- 

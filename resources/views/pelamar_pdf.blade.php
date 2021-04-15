@@ -104,7 +104,7 @@ $home = $_SERVER["DOCUMENT_ROOT"];
 
 	<td>
 	<h5  align="center">PT INDOBERKA INVESTAMA</h5>
-	<h6><U>FORM LAMARAN KERJA</U></h6>	
+	<h6><U>FORM LAMARAN KERJA</U></h6>
 	</td>
 
 	<td id="kanan">
@@ -185,6 +185,23 @@ $home = $_SERVER["DOCUMENT_ROOT"];
 	</td>
 	<td>
 		: {{ $p->kewarganegaraan }}
+	</td>
+</tr>
+<tr>
+	<td>
+		Pendidikan
+	</td>
+	<td>
+		: {{ $p->pendidikan }}
+	</td>
+</tr>
+
+<tr>
+	<td>
+		jurusan
+	</td>
+	<td>
+		: {{ $p->jurusan }}
 	</td>
 </tr>
 <tr>
@@ -296,14 +313,14 @@ $home = $_SERVER["DOCUMENT_ROOT"];
 		<td> ____________________ </td>
 		<td> ____________________ </td>
 		<td> ____________________ </td>
-	
+
 	</tr>
 	<tr>
 		<td>2</td>
 		<td> ____________________ </td>
 		<td> ____________________ </td>
 		<td> ____________________ </td>
-	
+
 	</tr>
 
 	<tr>
@@ -311,7 +328,7 @@ $home = $_SERVER["DOCUMENT_ROOT"];
 		<td> ____________________ </td>
 		<td> ____________________ </td>
 		<td> ____________________ </td>
-	
+
 	</tr>
 </table>
 </div>

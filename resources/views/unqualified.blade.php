@@ -4,7 +4,7 @@
 
 
 
-<h1 class="h3 mb-2 text-gray-800">Daftar Pelamar Dalam Proses</h1>
+<h1 class="h3 mb-2 text-gray-800">Daftar pelamar yang tidak memenuhi kualifikasi</h1>
 
 
           <!-- DataTales Example -->
@@ -23,7 +23,7 @@
                         <th>Nama</th>
                         <th>Foto</th>
                         <th>Posisi</th>
-                        <th>interview Date</th></th>
+                        <th>Nomor Telepon/HP</th>
                         <th>Status</th>
                         <th>Aksi</th>
                     </tr>
@@ -33,7 +33,7 @@
                         <th>Nama</th>
                         <th>Foto</th>
                         <th>Posisi</th>
-                        <th>Interview Date</th>
+                        <th>Nomor Telepon/HP</th>
                         <th>Keterangan</th>
                         <th>Aksi</th>
                     </tr>
@@ -44,7 +44,7 @@
                         <td>{{ $p->nama }}</td>
                         <td><img width="75px" src="{{ url('data_file/'.$p->file) }}"></td>
                         <td>{{ $p->posisi }}</td>
-                        <td>{{ Carbon\Carbon::parse($p->tanggal_int)->format('d-M-Y') }}, jam : {{ $p->jam_int }} WIB</td>
+                        <td>{{ $p->telepon }}</td>
                         <td>{{ $p->keterangan }}</td>
                         <td>
                         <!--<a href="/pelamar/detail/{{ $p->id }}" class="btn btn-info btn-sm">View</a>-->
@@ -56,7 +56,7 @@
                                 <a href="/pelamar/detail/{{ $p->pelamar_id  }}" class="dropdown-item">View</a>
                                 <a onclick="return confirm('terima pelamar sebagai karyawan baru ?')" href="/pelamar/in/{{ $p->pelamar_id }}" class="dropdown-item">qualified</a>
                                 <a onclick="return confirm('pelamar tidak memenuhi kriteria ?')" href="/pelamar/notin/{{ $p->pelamar_id }}" class="dropdown-item">not qualified</a>
-                                <a onclick="return confirm('hapus dari list on proses? Status akan kembali menjadi unproses!')" href="/pelamar/hapuspeljoin/{{ $p->pelamar_id }}" class="dropdown-item">reset</a>
+                                <a onclick="return confirm('hapus dari list on proses? Status akan kembali menjadi unproses!')" href="/pelamar/hapuspeljoin/{{ $p->pelamar_id }}" class="dropdown-item">delete</a>
                                 </div>
                           </div>
 
@@ -69,13 +69,11 @@
             </div>
           </div>
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('#dataTable').DataTable( {
 
-        "ordering": false
-    } );
-} );
-</script>
+
+
+
+
+
 
 @endsection

@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class Invitation_no_reply
+class Psikotest_Invitation_no_reply
  extends Mailable
 {
     use Queueable, SerializesModels;
@@ -42,6 +42,7 @@ class Invitation_no_reply
      */
     public function build()
     {
+
         return $this->from($address = 'HRD@indoberkainvestama.com', $name = 'HRD')
         ->view('emailku')
         ->with([

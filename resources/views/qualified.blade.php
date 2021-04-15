@@ -5,7 +5,9 @@
 
 
 <h1 class="h3 mb-2 text-gray-800">Daftar pelamar yang diterima</h1>
-     
+
+@include('includes.message')
+
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -55,8 +57,9 @@
                                 <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
                                 <a href="/pelamar/detail/{{ $p->pelamar_id  }}" class="dropdown-item">View</a>
                                 <a onclick="return confirm('terima pelamar sebagai karyawan baru ?')" href="/pelamar/in/{{ $p->pelamar_id }}" class="dropdown-item">qualified</a>
-                                <a onclick="return confirm('pelamar tidak memenuhi kriteria ?')" href="/pelamar/notin/{{ $p->pelamar_id }}" class="dropdown-item">not qualified</a>  
-                                <a onclick="return confirm('hapus dari list on proses? Status akan kembali menjadi unproses!')" href="/pelamar/hapuspeljoin/{{ $p->pelamar_id }}" class="dropdown-item">delete</a>  
+                                <a onclick="return confirm('pelamar tidak memenuhi kriteria ?')" href="/pelamar/notin/{{ $p->pelamar_id }}" class="dropdown-item">not qualified</a>
+                                <a onclick="return confirm('hapus dari list on proses? Status akan kembali menjadi unproses!')" href="/pelamar/hapuspeljoin/{{ $p->pelamar_id }}" class="dropdown-item">delete</a>
+                                <a onclick="return confirm('push karyawan baru ke daftar karyawan PT Indoberka?')" href="/pelamar/push/{{ $p->pelamar_id }}" class="dropdown-item">push data</a>
                                 </div>
                           </div>
 
@@ -68,10 +71,6 @@
               </div>
             </div>
           </div>
-
-
-
-
 
 
 

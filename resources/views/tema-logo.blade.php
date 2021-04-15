@@ -27,6 +27,7 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
+
     <!--<script type="text/javascript">
         $("#btnPrint").live("click", function () {
             var divContents = $("#dvContainer").html();
@@ -49,8 +50,8 @@
     margin-right: auto;
     margin-left: auto;
     margin-top: 10px;
-    background: white; 
-    box-shadow: 10px 5px 15px 4px #888888; 
+    background: white;
+    box-shadow: 10px 5px 15px 4px #888888;
     border-radius: 10px;
     margin-bottom: 30px;
   }
@@ -122,8 +123,9 @@
   <nav id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <li class="sidebar-brand">
-        <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="js-scroll-trigger" href="#page-top">Selamat datang</a>
       </li>
+      <!--
       <li class="sidebar-nav-item">
         <a class="js-scroll-trigger" href="#page-top">Home</a>
       </li>
@@ -138,7 +140,7 @@
       </li>
       <li class="sidebar-nav-item">
         <a class="js-scroll-trigger" href="#contact">Contact</a>
-      </li>
+      </li>-->
     </ul>
   </nav>
 
@@ -146,21 +148,21 @@
   <header class="masthead d-flex">
     <div class="container">
       <div class="text-center">
-        
-          
 
-   
-  
+
+
+
+
     @yield('form')
-  
-    
+
+
 
     <div class="overlay"></div>
   </div>
 </div>
 </header>
 
-  
+
 
   <!-- Footer -->
 <div class="container">
@@ -187,7 +189,7 @@
     </div>
   </footer>
 </div>
-  
+
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
     <i class="fas fa-angle-up"></i>

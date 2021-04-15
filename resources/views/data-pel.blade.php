@@ -13,7 +13,7 @@
 	</div>
 	<div class="col">
 	<h5  align="center" style="padding-top:20px;">PT INDOBERKA INVESTAMA</h5>
-	<h6><U>FORM LAMARAN KERJA</U></h6>	
+	<h6><U>FORM LAMARAN KERJA</U></h6>
 	</div>
 	<div class="col" align="right" style="padding-top: 20px; padding-right: 50px; ">
 	<p>IBI-HRD-FR-003</p>
@@ -81,6 +81,25 @@
 		: {{ $p->kewarganegaraan }}
 	</td>
 </tr>
+
+<tr>
+	<td>
+		Pendidikan
+	</td>
+	<td>
+		: {{ $p->pendidikan }}
+	</td>
+</tr>
+
+<tr>
+	<td>
+		jurusan
+	</td>
+	<td>
+		: {{ $p->jurusan }}
+	</td>
+</tr>
+
 <tr>
 	<td>
 		Status perkawinan
@@ -127,9 +146,9 @@
 
 <div class="container" style="padding-bottom: 20px;">
 <div class="ket" style="text-align: left;">
-<pre style="color: red;"> 
+<pre style="color: red;">
 * Hanya kandidat terpilih yang akan diundang untuk interview.
-* Undangan akan dikirim melalui Email yang diisi pada formulir pendaftaran.
+* Undangan akan dikirim melalui Email yang diisi pada formulir pendaftaran. (cek juga bagian SPAM)
 * Harap segera <b>UNDUH FORM</b> dan lengkapi data anda ketika akan menghadiri tahap interview.
 * Form wajib dibawa ketika menghadiri interview.
 </pre>
@@ -148,4 +167,3 @@
 
 
 @stop
- 
